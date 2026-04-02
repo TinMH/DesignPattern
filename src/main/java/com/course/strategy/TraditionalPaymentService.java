@@ -17,8 +17,13 @@ public class TraditionalPaymentService {
     } else if (paymentType.equalsIgnoreCase("CREDIT_CARD")) {
       System.out.println("[Hệ thống] Kết nối cổng thẻ tín dụng quốc tế...");
       System.out.println("[Credit Card] Đã trừ: " + amount + " VNĐ");
-
-    } else {
+    } else if (paymentType.equalsIgnoreCase("VNPAY")) {
+      System.out.println("[Hệ thống] Kết nối cổng thanh toán VNPAY...");
+      System.out.println("[VNPAY] Đã thanh toán thành công: " + amount + " VNĐ");
+    } else if (paymentType.equalsIgnoreCase("PAYPAL")) {
+      System.out.println("[Hệ thống] Kết nối cổng thanh toán PayPal...");
+      System.out.println("[PayPal] Đã thanh toán thành công: " + amount + " VNĐ");
+    }else {
       System.out.println("[Lỗi] Phương thức thanh toán không được hỗ trợ!");
     }
   }
@@ -26,6 +31,5 @@ public class TraditionalPaymentService {
   public static void main(String[] args) {
     TraditionalPaymentService service = new TraditionalPaymentService();
     service.processPayment("MOMO", 500000);
-    service.processPayment("BITCOIN", 100000); // Báo lỗi vì chưa được hỗ trợ
   }
 }
