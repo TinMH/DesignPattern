@@ -17,7 +17,7 @@ public class ZalopayPayment implements PaymentStrategy {
     @Override
     public boolean validatePaymentInfo() {
         System.out.println("Đang kiểm tra tính hợp lệ của tài khoản ZaloPay...");
-        return true; // Giả lập xác thực thành công
+        return true;
     }
 
     @Override
