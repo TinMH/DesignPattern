@@ -8,7 +8,7 @@ public class OrderProcessor {
         this.cartTotal = cartTotal;
     }
 
-    // Hàm quan trọng nhất: Cho phép thay đổi chiến lược thanh toán tại Runtime
+    // Cho phép thay đổi chiến lược thanh toán tại Runtime
     public void setStrategy(PaymentStrategy strategy) {
         this.currentStrategy = strategy;
     }

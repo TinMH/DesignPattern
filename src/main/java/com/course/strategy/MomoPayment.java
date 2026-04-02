@@ -22,6 +22,6 @@ public class MomoPayment implements PaymentStrategy {
 
     @Override
     public double getAvailableAmount() {
-        return accountBalance; // Trả về số dư thực tế của ví
+        return accountBalance;
     }
 }
