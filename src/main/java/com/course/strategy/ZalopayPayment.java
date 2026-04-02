@@ -1,12 +1,27 @@
 package com.course.strategy;
 
 public class ZalopayPayment implements PaymentStrategy {
+    private String phoneNumber;
+    private String linkedAccount;
 
-  @Override
-  public void pay(double amount) {
-    System.out.println("--- ĐANG XỬ LÝ THANH TOÁN QUA ZaloPay ---");
-    System.out.println("[Hệ thống] Kết nối API ZaloPay...");
-    System.out.println("[ZaloPay] Đã thanh toán thành công: " + amount + " VNĐ");
-  }
+    public ZalopayPayment(String phoneNumber, String linkedAccount) {
+        this.phoneNumber = phoneNumber;
+        this.linkedAccount = linkedAccount;
+    }
 
+    @Override
+    public void pay(double amount) {
+        System.out.println("Tiến hành trừ " + amount + " VND từ tài khoản ZaloPay (SĐT: " + phoneNumber + ").");
+    }
+
+    @Override
+    public boolean validatePaymentInfo() {
+        System.out.println("Đang kiểm tra tính hợp lệ của tài khoản ZaloPay...");
+        return true; // Giả lập xác thực thành công
+    }
+
+    @Override
+    public double getAvailableAmount() {
+        return 5000000.0; // Giả lập số dư khả dụng
+    }
 }
